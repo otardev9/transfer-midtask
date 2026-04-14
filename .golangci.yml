@@ -1,0 +1,17 @@
+linters:
+  enable:
+    - errcheck
+    - govet
+    - staticcheck
+    - ineffassign
+    - unused
+    - nolintlint
+
+issues:
+  exclude-rules:
+    # Unchecked errors in test cleanup are fine.
+    - path: _test\.go
+      linters: [errcheck]
+    # tx.Rollback after Commit returns ErrTxDone; the nolint directive is intentional.
+    - source: tx\.Rollback
+      linters: [errcheck]

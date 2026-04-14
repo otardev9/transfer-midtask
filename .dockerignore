@@ -1,0 +1,17 @@
+# Version control
+.git
+.github
+
+# Local development artifacts
+*.out
+bin/
+
+# Documentation (not needed in the image)
+README.md
+REVIEW.md
+ANSWERS.md
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+.dockerignore
