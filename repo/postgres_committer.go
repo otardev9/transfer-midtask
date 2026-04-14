@@ -29,7 +29,7 @@ func (c *PostgresCommitter) Commit(ctx context.Context, plan *contracts.Plan) er
 	if err != nil {
 		return fmt.Errorf("begin transaction: %w", err)
 	}
-	defer tx.Rollback() //nolint:errcheck // intentional — Rollback is a no-op after Commit
+	defer tx.Rollback()
 
 	for _, mut := range mutations {
 		query, args := buildUpdateQuery(mut)
